@@ -1,4 +1,4 @@
-package com.github.zhukdi.github_fetch
+package com.github.zhukdi.githubfetch
 
 import org.junit.Test
 

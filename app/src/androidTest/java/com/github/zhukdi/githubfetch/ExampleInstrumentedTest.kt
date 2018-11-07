@@ -1,4 +1,4 @@
-package com.github.zhukdi.github_fetch
+package com.github.zhukdi.githubfetch
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
