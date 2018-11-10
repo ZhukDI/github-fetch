@@ -22,7 +22,7 @@ class IssueAdapter(private val issueList: List<Issue>): RecyclerView.Adapter<Iss
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: IssueViewHolder, position: Int) {
-//        holder.issueUserImage
+        holder.issueUserImage
         holder.issueTitle.text = issueList[position].title //ToDo: add substring
         holder.issueDescription.text = "#${issueList[position].number} opened on ${issueList[position].createdAt}"
 
