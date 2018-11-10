@@ -12,14 +12,14 @@
             android:layout_margin="4dp">
 
         <ImageView
-                android:id="@+id/issueAuthorImage"
+                android:id="@+id/issue_owner_image"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:padding="2dp"
         />
 
         <TextView
-                android:id="@+id/issueTitle"
+                android:id="@+id/issue_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Title 1"
@@ -27,20 +27,20 @@
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
                 android:layout_alignParentTop="true"
-                android:layout_toEndOf="@+id/issueAuthorImage"
+                android:layout_toEndOf="@+id/issue_owner_image"
                 android:layout_marginStart="8dp"
         />
 
         <TextView
-                android:id="@+id/issueDescription"
+                android:id="@+id/issue_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="description"
                 android:textSize="15sp"
                 android:textStyle="italic"
                 android:textColor="@android:color/black"
-                android:layout_below="@id/issueTitle"
-                android:layout_toEndOf="@+id/issueAuthorImage"
+                android:layout_below="@id/issue_title"
+                android:layout_toEndOf="@+id/issue_owner_image"
                 android:layout_marginStart="8dp"
         />
 
