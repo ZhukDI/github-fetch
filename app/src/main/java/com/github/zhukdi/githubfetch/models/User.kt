@@ -1,4 +1,4 @@
-package com.github.zhukdi.githubfetch.model
+package com.github.zhukdi.githubfetch.models
 
 class User {
     var id: Long = 0
