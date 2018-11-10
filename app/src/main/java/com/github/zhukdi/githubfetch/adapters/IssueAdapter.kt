@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.github.zhukdi.githubfetch.R
 import com.github.zhukdi.githubfetch.models.Issue
+import com.squareup.picasso.Picasso
 
 class IssueAdapter(private val issueList: List<Issue>): RecyclerView.Adapter<IssueViewHolder>() {
 
@@ -22,10 +23,9 @@ class IssueAdapter(private val issueList: List<Issue>): RecyclerView.Adapter<Iss
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: IssueViewHolder, position: Int) {
-        holder.issueUserImage
-        holder.issueTitle.text = issueList[position].title //ToDo: add substring
+        Picasso.get().load(issueList[position].user.avatarUrl).into(holder.issueUserImage)
+        holder.issueTitle.text = issueList[position].title
         holder.issueDescription.text = "#${issueList[position].number} opened on ${issueList[position].createdAt}"
-
     }
 
 }

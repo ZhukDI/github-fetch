@@ -25,13 +25,6 @@ class MainActivity : AppCompatActivity() {
         val retrofit = GitHubClient.instance
         jsonIssueApi = retrofit.create(IGitHubIssueAPI::class.java)
 
-//        recyclerView.layoutManager = LinearLayoutManager(this)
-//        val issueList = listOf<Issue>(
-//            Issue(1, "title", 1, "08.11.2018"),
-//            Issue(2, "title2", 2, "09.11.2018"),
-//            Issue(3, "title3", 3, "10.11.2018")
-//        )
-//        recyclerView.adapter = IssueAdapter(issueList)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
         fetchData()
