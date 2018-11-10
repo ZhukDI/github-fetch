@@ -11,7 +11,7 @@ object GitHubClient {
         get() {
             if (ourInstance == null) {
                 ourInstance = Retrofit.Builder()
-                    .baseUrl(" https://api.github.com/repos/ZhukDI/javaee-library")
+                    .baseUrl("https://api.github.com/repos/ZhukDI/javaee-library/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build()

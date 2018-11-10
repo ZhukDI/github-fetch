@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface IGitHubIssueAPI {
 
-    @get: GET("issues")
-    val ussues: Observable<List<Issue>>
+    @GET("issues")
+    fun getIssues() : Observable<List<Issue>>
 
 }

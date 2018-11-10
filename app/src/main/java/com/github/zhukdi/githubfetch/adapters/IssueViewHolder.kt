@@ -7,5 +7,5 @@ import kotlinx.android.synthetic.main.issue_item.view.*
 class IssueViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
     val issueTitle = view.issue_title!!
     val issueDescription = view.issue_description!!
-    val issueOwnerImage = view.issue_owner_image!!
+    val issueUserImage = view.issue_user_image!!
 }

@@ -16,14 +16,14 @@ class IssueAdapter(private val issueList: List<Issue>): RecyclerView.Adapter<Iss
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IssueViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val cellForRow = layoutInflater.inflate(R.layout.issue_item, parent, false)
-        return IssueViewHolder(cellForRow)
+            .inflate(R.layout.issue_item, parent, false)
+        return IssueViewHolder(layoutInflater)
     }
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: IssueViewHolder, position: Int) {
-//        holder.issueOwnerImage
-        holder.issueTitle.text = issueList[position].title
+//        holder.issueUserImage
+        holder.issueTitle.text = issueList[position].title //ToDo: add substring
         holder.issueDescription.text = "#${issueList[position].number} opened on ${issueList[position].createdAt}"
 
     }
