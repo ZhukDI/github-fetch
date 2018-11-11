@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface IGitHubIssueAPI {
 
-    @GET("issues")
+    @GET(UrlManager.ISSUES)
     fun getIssues() : Observable<List<Issue>>
 
 }

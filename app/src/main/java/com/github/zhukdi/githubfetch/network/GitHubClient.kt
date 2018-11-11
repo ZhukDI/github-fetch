@@ -11,7 +11,7 @@ object GitHubClient {
         get() {
             if (ourInstance == null) {
                 ourInstance = Retrofit.Builder()
-                    .baseUrl("https://api.github.com/repos/angular/angular/")
+                    .baseUrl(UrlManager.API_HOST)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build()
