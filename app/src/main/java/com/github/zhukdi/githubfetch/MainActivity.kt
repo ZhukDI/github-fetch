@@ -22,12 +22,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        search_btn.setOnClickListener {
+            val searchText = search_field.text.toString()
+
+            searchIssues(searchText)
+        }
+
         val retrofit = GitHubClient.instance
         jsonIssueApi = retrofit.create(IGitHubIssueAPI::class.java)
 
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
         fetchData()
+    }
+
+    private fun searchIssues(searchText: String) {
+        Toast.makeText(applicationContext, searchText, Toast.LENGTH_LONG).show()
     }
 
     private fun fetchData() {
