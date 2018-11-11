@@ -33,16 +33,11 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        fetchData()
     }
 
-    private fun searchIssues(searchText: String) {
-        Toast.makeText(applicationContext, searchText, Toast.LENGTH_LONG).show()
-    }
-
-    private fun fetchData() {
+    private fun searchIssues(repoName: String) {
         compositeDisposable.add(jsonIssueApi
-            .getIssues()
+            .getIssues(repoName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
