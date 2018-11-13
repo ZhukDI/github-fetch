@@ -12,6 +12,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
     private fun searchIssues(repoName: String) {
         compositeDisposable.add(jsonIssueApi
             .getIssues(repoName)
+            .repeatWhen { objectObservable -> objectObservable.delay(10, TimeUnit.SECONDS) }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
