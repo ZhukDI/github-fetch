@@ -1,13 +1,14 @@
-package com.github.zhukdi.githubfetch
+package com.github.zhukdi.githubfetch.main
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
+import com.github.zhukdi.githubfetch.R
 import com.github.zhukdi.githubfetch.adapters.IssueAdapter
 import com.github.zhukdi.githubfetch.models.Issue
 import com.github.zhukdi.githubfetch.network.GitHubClient
-import com.github.zhukdi.githubfetch.network.IGitHubIssueAPI
+import com.github.zhukdi.githubfetch.network.IGitHubAPI
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -16,7 +17,7 @@ import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var jsonIssueApi: IGitHubIssueAPI
+    private lateinit var jsonIssueApi: IGitHubAPI
     private var compositeDisposable: CompositeDisposable = CompositeDisposable()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val retrofit = GitHubClient.instance
-        jsonIssueApi = retrofit.create(IGitHubIssueAPI::class.java)
+        jsonIssueApi = retrofit.create(IGitHubAPI::class.java)
 
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
