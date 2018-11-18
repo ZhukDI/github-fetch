@@ -1,5 +1,6 @@
 package com.github.zhukdi.githubfetch.di.module
 
+import android.app.Application
 import com.github.zhukdi.githubfetch.network.IGitHubAPI
 import com.github.zhukdi.githubfetch.network.UrlManager
 import com.google.gson.Gson
@@ -15,12 +16,12 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
-class ApplicationModule {
+class NetModule {
 
+    @Provides
     fun provideGitHubService(retrofit: Retrofit): IGitHubAPI {
         return retrofit.create(IGitHubAPI::class.java)
     }
-
 
     @Provides
     @Singleton
