@@ -10,7 +10,6 @@ import com.github.zhukdi.githubfetch.ui.issues.IssuePresenterImpl
 import com.github.zhukdi.githubfetch.ui.issues.IssueView
 import kotlinx.android.synthetic.main.activity_main.*
 
-//class MainActivity : AppCompatActivity() {
 class MainActivity : BaseActivity(), IssueView {
 
     var issuePresenter: IssuePresenterImpl?=null
@@ -50,43 +49,4 @@ class MainActivity : BaseActivity(), IssueView {
         recyclerView.adapter = adapter
     }
 
-//    private lateinit var jsonIssueApi: IGitHubAPI
-//    private var compositeDisposable: CompositeDisposable = CompositeDisposable()
-//
-//    @Override
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
-//
-//        search_btn.setOnClickListener {
-//            val searchText = search_field.text.toString()
-//
-//            searchIssues(searchText)
-//        }
-//
-//        val retrofit = GitHubClient.instance
-//        jsonIssueApi = retrofit.create(IGitHubAPI::class.java)
-//
-//        recyclerView.setHasFixedSize(true)
-//        recyclerView.layoutManager = LinearLayoutManager(this)
-//    }
-//
-//    private fun searchIssues(repoName: String) {
-//        compositeDisposable.add(jsonIssueApi
-//            .getIssues(repoName)
-//            .repeatWhen { objectObservable -> objectObservable.delay(10, TimeUnit.SECONDS) }
-//            .subscribeOn(Schedulers.io())
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe({
-//                issues -> displayData(issues)
-//            }, {
-//                Toast.makeText(applicationContext, it.message, Toast.LENGTH_SHORT).show()
-//            })
-//        )
-//    }
-//
-//    private fun displayData(issues: List<Issue>?) {
-//        val adapter = IssueAdapter(issues!!)
-//        recyclerView.adapter = adapter
-//    }
 }

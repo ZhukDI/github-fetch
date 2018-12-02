@@ -15,14 +15,11 @@ Volatile make sure the variable can  be accessed cross different threads
 
 open class Presenter<V>(@Volatile var view: V? ){
 
-
     companion object {
         var compositeDisposables: CompositeDisposable=CompositeDisposable()
     }
 
     init {
-
-
     }
 
     protected fun view(): V? {
