@@ -1,4 +1,4 @@
-package com.github.zhukdi.githubfetch.adapters
+package com.github.zhukdi.githubfetch.ui.adapters
 
 import android.support.v7.widget.RecyclerView
 import android.view.View

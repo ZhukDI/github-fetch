@@ -7,7 +7,7 @@ import com.github.zhukdi.githubfetch.di.module.NetModule
 
 open class GitHubFetchApplication : Application() {
 
-    private lateinit var applicationComponent: ApplicationComponent
+    public lateinit var applicationComponent: ApplicationComponent
 
     override fun onCreate() {
         super.onCreate()
